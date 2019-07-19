@@ -7,21 +7,21 @@ class A:
     __x = 11  # _A__x=11
 
     def __init__(self, name):
-        self.__name = name
+        self.__name = name  # self._A__name
 
-    def __foo(self):
+    def __foo(self):  # _A__foo(self)
         print('run foo')
 
     def bar(self):
-        print(A.__x)
+        print('run bar')
+        self.__foo()  # actually it will execute self._A__foo()
 
 
 print(A.__dict__)
-
 a = A('denny')
-print(a.__dict__)
 
-print(a._A__x)
+print(a.__dict__)
+print(a._A__name)
 
 A.__t1 = 111
 a.__t2 = 222
