@@ -21,17 +21,17 @@ try:
         header_json = header_bytes.decode('utf-8')
         header_dic = json.loads(header_json)
         print(header_dic)
-        data_size = header_dic['total_size']
+        total_size = header_dic['file_size']
+        filename = header_dic['file_size']
 
-        recv_size = 0
-        recv_data = b''
+        with open('c.txt', 'wb') as f:  # filename
+            recv_size = 0
 
-        while recv_size < data_size:
-            data = c.recv(1024)
-            recv_data += data
-            recv_size += len(data)
+            while recv_size < total_size:
+                line = c.recv(1024)
+                f.write(line)
+                recv_size += len(line)
 
-        print(recv_data.decode('utf-8'))
 except Exception as e:
     print('errorrrrrrr', e)
 finally:
