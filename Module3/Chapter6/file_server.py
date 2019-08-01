@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 __author__ = 'Denny'
-import socket, os, struct, json, time
+import socket, os, struct, json
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # ip,port reuse

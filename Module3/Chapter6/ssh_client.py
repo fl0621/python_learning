@@ -9,9 +9,8 @@ try:
     c.connect(('127.0.0.1', 6161))
 
     while True:
-        send_data = input(':>>')
+        send_data = input(':>> ')
         if not send_data.strip():
-            print('input cant be empty ', send_data)
             continue
         c.send(send_data.strip().encode('utf-8'))
 
@@ -25,6 +24,7 @@ try:
 
         recv_size = 0
         recv_data = b''
+        print(type(recv_data))
 
         while recv_size < data_size:
             data = c.recv(1024)
