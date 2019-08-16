@@ -9,7 +9,7 @@ def calc(n):
         calc(n)
     print(n)
 
-# calc(10)
+calc(10)
 
 #从最里层返回值到最外层
 def r_calc(n,i):
@@ -19,5 +19,5 @@ def r_calc(n,i):
     print(n,i)
     return n
 
-res = r_calc(188,1)
-print("result",res)
+# res = r_calc(188,1)
+# print("result",res)
