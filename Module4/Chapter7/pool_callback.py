@@ -9,7 +9,13 @@ import os, time, random
 
 def task(name):
     print('name: %s pid:%s is running,name: %s' % (name, os.getpid(), currentThread().name))
-    time.sleep(random.randint(1, 3))
+    time.sleep(random.randint(3, 5))
+    t = time.time()
+    return t
+
+
+def show(t_time):
+    print(t_time.result())
 
 
 if __name__ == '__main__':
@@ -17,10 +23,9 @@ if __name__ == '__main__':
     # pool = ThreadPoolExecutor(3)
     pool = ProcessPoolExecutor(3)
 
-    for i in range(10):
-        pool.submit(task, i)
+    for i in range(5):
+        pool.submit(task, i).add_done_callback(show)
 
-    pool.shutdown()
+    # pool.shutdown()
     # pool.map()
-
     print('main')
