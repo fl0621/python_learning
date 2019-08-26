@@ -7,6 +7,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # ip,port reuse
 s.bind(('127.0.0.1', 6161))
 s.listen(5)  # the number of waiting queue
+# s.setblocking(False)  # set socket server to non-blocking model
 print('starting......')
 
 while True:
