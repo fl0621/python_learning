@@ -4,15 +4,14 @@
 	<meta charset="UTF-8">
 	<title>属性选择器</title>
 	<style type="text/css">
+		/* 属性选择器在表单控件中使用比较频繁*/
 		label[for]{
 			color: red;
 			font-size: 20px;
 		}
-
 		label[for='pwd']{
 			color: yellow;
 		}
-		
 		/*以...开头*/
 		label[for^='vip']{
 			font-size: 30px;
@@ -21,7 +20,16 @@
 		label[for$='p2']{
 			font-size: 20px;
 		}
+        /*包含...*/
 		label[for*='ser']{
+			color: green;
+		}
+        /*以空格分隔的多个属性的其中一个是...*/
+		[title~='hello']{
+			color: green;
+		}
+        /*以连字符分隔的多个属性的其中一个是...*/
+		[lang|='en']{
 			color: green;
 		}
 
@@ -32,8 +40,7 @@
 	</style>
 </head>
 <body>
-	
-	<!-- 属性选择器 通常在 表单控件中 使用比较频繁-->
+
 	<div class="box">
 		<form action="">
 			<label for="user">用户名：</label>
