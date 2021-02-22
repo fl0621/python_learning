@@ -1005,7 +1005,7 @@ var myDate = new Date();
 
 ```javascript
 //返回本地时间
-console.log(myDate().toLocalString());
+console.log(myDate.toLocaleString())
 ```
 
 #### JSON

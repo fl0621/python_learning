@@ -123,18 +123,14 @@
     function Person(name,age){
     	this.name  = name;
     	this.age = age;
-
     }
 
-    Person.prototype.alertName = function(){	
+    Person.prototype.alertName = function(){
     	alert(this.name);
     };
 
     var p1  = new Person('alex',20);
     var p2  = new Person('alex2',23);
-
-    // 内存地址 和值
-    console.log(p1===p2);
 
     p1.alertName();
     p2.alertName();
